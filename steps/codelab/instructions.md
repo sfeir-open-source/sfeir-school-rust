@@ -36,7 +36,7 @@ async fn root() -> &'static str {
 
 ## 2) Stockons notre première valeur
 
-Il va falloir créer une nouvelle partie dans SQL. Créons un pool de connexion Postgres.
+Créons un pool de connexion Postgres.
 
 ```shell
 cargo add -F runtime-async-std-native-tls,postgres,macros,chrono sqlx@0.6
@@ -85,7 +85,7 @@ struct LabValue {
 
 async fn create(pool: &PgPool, value: i64) -> Result<LabValue, Error>  {
   query_as!(LabValue,
-            "INSERT INTO tests (val)
+            "INSERT INTO examples (val)
                 VALUES ($1) RETURNING id, val as value",
             value
         )
@@ -154,8 +154,11 @@ impl<S> FromRequestParts<S> for Claims
 ## 4) Créer un plateau de jeu
 
 Pour la route `POST http://localhost:3000/play`, créez une nouvelle partie dans la table `games`.
-Créez aussi 5 cases( vous pouvez utiliser la fonction generate_ships du fichier utils.rs) que vous sauvegarderez dans 
+Créez aussi des cases (vous pouvez utiliser la fonction generate_ships du fichier utils.rs) que vous sauvegarderez dans 
 la table `cases`.
+Les cases sont des strings de la forme XY avec A<= X <= J et 0 <= Y <= 9. Par exemple, A6 ou C3.
+
+
 
 ## 5) Jouons un tour !
 
@@ -187,11 +190,13 @@ En Rust, vous pouvez utiliser JSON<Vec<Vec<String>>>.
 
 ```Rust
 async fn root() -> Json<Vec<Vec<String>>> {
-  Json(vec![vec!["Hello, World!".to_owned()]])
+  Json(vec![vec!["field".to_owned(),"value".to_owned()]])
 }
 ```
 
 
 ## 8) Rajouter Une réponse ? Les jurons du captain Hadook ? 
 
-Modifier la route `POST http://localhost:3000/play` pour rajouter un champs field
+Modifiez la route `POST http://localhost:3000/play` pour rajouter un champs `answer` qui sera un string.
+Vous pouvez y rajouter les célébre touché ou coulé...
+Ou si vous avez toujours aimer le captaine Haddock, une myriade de ses jurons.

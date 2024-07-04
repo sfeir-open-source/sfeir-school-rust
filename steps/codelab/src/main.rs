@@ -4,6 +4,9 @@ use sqlx::{query_as};
 use sqlx::Error;
 
 mod middleware;
+mod utils;
+
+use utils::generate_ships;
 
 #[tokio::main]
 async fn main() {
