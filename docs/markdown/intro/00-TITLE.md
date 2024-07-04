@@ -1,3 +1,5 @@
 <!-- .slide: class="transition bg-pink" -->
 
-# Introduction
+![h-500 float-right](./assets/images/QR-for-return.png)
+# Rust Codelab
+

@@ -2,7 +2,7 @@
 
 Template repository for SFEIR School, this template could be use to start a school with revealJS and SFEIR School theme
 
-Don't forget to replace all xxx by your techno
+Don't forget to replace all rust by your techno
 
 ## Files to changes
 
@@ -21,7 +21,7 @@ You could also look at documentation of school theme : https://github.com/sfeir-
 ## Tasks to do
 
 - [] Change the files (cf before)
-- [] Replace all xxx by your techno
+- [] Replace all rust by your techno
 - [] Remove this part of README
 - [] Complete the README with your content
 - [] Check that the github pages is pointing to `/docs` directory
@@ -30,7 +30,7 @@ You could also look at documentation of school theme : https://github.com/sfeir-
 
 The text below is the template you could use for your readme
 
-# SFEIR School XXX
+# SFEIR School Rust
 
 <p align="center">
  <img style="display:block" width="20%" height="20%" src="./docs/assets/images/sfeir-school-logo.png" alt="SFEIR School logo">
@@ -42,7 +42,7 @@ The text below is the template you could use for your readme
 
 # Slides
 
-You can view the slides [here](https://sfeir-open-source.github.io/sfeir-school-xxx/).
+You can view the slides [here](https://sfeir-open-source.github.io/sfeir-school-rust/).
 
 ## Develop
 

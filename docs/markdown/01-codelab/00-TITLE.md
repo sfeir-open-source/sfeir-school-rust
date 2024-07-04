@@ -1,6 +1,6 @@
 <!-- .slide: class="first-slide" sfeir-level="2" sfeir-techno="rust" -->
 
-# **Welcome to SFEIR School**
+# **Welcome to SFEIR Codelab**
 
 ## **Rust 200**
 
@@ -29,12 +29,15 @@ Credentials
 
 ##==##
 
-# Déroulement de la formation
+# Déroulement du codelab
 
 <p class="center">
-C'est quand la pause ?<br>
-Quand est-ce qu'on mange ?<br>
-Tour de table ...
+<ol>
+<li>cours théorique (30 min)</li>
+<li>exercice pratique guidé (30min)</li>
+<li>exercice pratique libre (1h30)</li>
+</ol>
+<span>Vous êtes libre de prendre les pauses comme vous souhaitez à partir des exercices libres</span>
 </p>
 <br><br>
 
