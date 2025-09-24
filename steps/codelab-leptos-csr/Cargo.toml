@@ -1,0 +1,12 @@
+[package]
+name = "leptos-minesweeper"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+leptos = { version = "0.8.9", features = ["csr"] }
+rand = "0.9.2"
+getrandom = { version = "0.3", features = ["wasm_js"] }
+reactive_stores = "0.2.5"
+reactive_stores_macro = "0.2.6"
+serde = "1.0.226"
