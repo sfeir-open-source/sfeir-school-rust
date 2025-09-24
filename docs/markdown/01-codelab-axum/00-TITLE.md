@@ -41,6 +41,4 @@ Credentials
 </p>
 <br><br>
 
-**Feuille de présence (obligatoire)** <!-- .element: class="center" -->
 
-https://bit.ly/sfeir-rust <!-- .element: class="center" -->

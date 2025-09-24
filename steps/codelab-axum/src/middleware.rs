@@ -15,7 +15,7 @@ impl<S> FromRequestParts<S> for Claims
 {
     type Rejection = String;
 
-    async fn from_request_parts(parts: &mut Parts, state: &S) -> Result<Self, Self::Rejection> {
+    async fn from_request_parts(parts: &mut Parts, _state: &S) -> Result<Self, Self::Rejection> {
       let accept_header = parts
         .headers
         .get("fake-auth")

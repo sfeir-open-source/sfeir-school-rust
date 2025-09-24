@@ -3,10 +3,10 @@
 
 ```Bash
 # Créer un projet
-cargo new battleship
+cargo new Minesweeper
 
 # charger les dépendences
-cargo add axum 
+cargo add axum serde
 
 #Charger la lib pour l'asynchrone
 cargo add -F  rt,rt-multi-thread,macros tokio
@@ -48,12 +48,13 @@ use sqlx::PgPool;
 
 // [...]
 #[derive(Clone)]
-pub struct AppState {
-  pub db_pool: PgPool,
+struct AppState {
+   pub db_pool: PgPool,
 }
 
-async fn init_shared_state() -> AppState{
-  match PgPool::connect("url").await {
+async fn init_shared_state() -> AppState {
+  let url =  std::env::var("DATABASE_URL").expect("DATABASE_URL must be set");
+  match PgPool::connect(&url).await {
     Ok(db_pool) => {
       AppState {
         db_pool
@@ -73,6 +74,7 @@ On édite la fonction main pour lier le state à notre application :
     .with_state(init_shared_state().await);
 // [...]
 ```
+
 
 
 Voici un exemple des imports et d'une fonction qui écrit un nombre dans une table :
@@ -97,6 +99,8 @@ async fn create(pool: &PgPool, value: i64) -> Result<LabValue, Error>  {
 Créer une route pour créer cette valeur dans la base de données :
 
 ```Rust
+use axum::{Router, routing::{get, post}};
+
 // [...]
   .route("/", get(root))
   .route("/value/:integer", post(create_number))
@@ -120,8 +124,6 @@ Cette structure devra implémenter le trait `FromRequestParts`
 
 ```Rust
 use axum::{async_trait, extract::{FromRequestParts, TypedHeader}, RequestPartsExt};
-use axum::headers::Authorization;
-use axum::headers::authorization::Bearer;
 use axum::http::{request::Parts};
 
 use crate::api::app_state::AppStateTrait;

@@ -69,3 +69,6 @@ typings/
 #Dev
 docs/test.html
 *.zip
+
+#rust
+target

@@ -2,7 +2,7 @@ import { SfeirThemeInitializer } from '../web_modules/sfeir-school-theme/sfeir-s
 
 // One method per module
 function schoolSlides() {
-  return ['01-codelab-axum/00-TITLE.md', 'speakers/ly.md','01-codelab-axum/01-BASICS.md', '01-codelab-axum/02-EXERCISE.md'];
+  return ['02-codelab-leptos/00-TITLE.md', 'speakers/ly.md','02-codelab-leptos/01-BASICS.md', '02-codelab-leptos/02-EXERCISE.md', '02-codelab-leptos/00-TITLE.md'];
 }
 
 function introSlides() {
